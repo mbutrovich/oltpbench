@@ -2,27 +2,25 @@
 <parameters>
 	
     <!-- Connection details -->
-    <dbtype>postgres</dbtype>
+    <dbtype>noisepage</dbtype>
     <driver>org.postgresql.Driver</driver>
-    <DBUrl>jdbc:postgresql://localhost:5432/tpcc</DBUrl>
-    <!-- <DBUrl>jdbc:postgresql://localhost:5432/tpcc?preferQueryMode=simple</DBUrl> -->
-    <username>matt</username>
-    <password></password>
+    <DBUrl>jdbc:postgresql://localhost:15721/terrier</DBUrl>
+    <!-- <DBUrl>jdbc:postgresql://localhost:15721/terrier?preferQueryMode=simple</DBUrl> -->
+    <username>test</username>
+    <password>test</password>
     <isolation>TRANSACTION_READ_COMMITTED</isolation>
     
     <!-- Scale factor is the number of warehouses in TPCC -->
     <scalefactor>1</scalefactor>
-    <loaderThreads>1</loaderThreads>
+    <!-- <loaderThreads>1</loaderThreads> -->
     
     <!-- The workload -->
     <terminals>1</terminals>
     <works>
         <work>
-          <time>10</time>
-          <rate>10000</rate>
-          <ratelimited bench="tpcc">true</ratelimited>
+          <time>60</time>
+          <rate>unlimited</rate>
           <weights>45,43,4,4,4</weights>
-          <!-- <weights>0,0,0,100,0</weights> -->
         </work>
 	</works>
 	
