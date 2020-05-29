@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<parameters>
+
+    <!-- Connection details -->
+    <dbtype>noisepage</dbtype>
+    <driver>org.postgresql.Driver</driver>
+    <DBUrl>jdbc:postgresql://localhost:15721/terrier</DBUrl>
+    <!-- <DBUrl>jdbc:postgresql://localhost:15721/terrier?preferQueryMode=simple</DBUrl> -->
+    <username>test</username>
+    <password>test</password>
+    <isolation>TRANSACTION_READ_COMMITTED</isolation>
+    
+    
+    <scalefactor>1</scalefactor>
+    <!-- <loaderThreads>1</loaderThreads> -->
+    
+    <!-- The workload -->
+    <terminals>1</terminals>
+    <works>
+        <work>
+          <time>60</time>
+          <rate>100000</rate>
+          <weights>15,15,15,25,15,15</weights>
+        </work>
+    </works>
+        
+    <!-- SmallBank Procedures declaration -->
+    <transactiontypes>
+        <transactiontype>
+            <name>Amalgamate</name>
+        </transactiontype>
+        <transactiontype>
+            <name>Balance</name>
+        </transactiontype>
+        <transactiontype>
+            <name>DepositChecking</name>
+        </transactiontype>
+        <transactiontype>
+            <name>SendPayment</name>
+        </transactiontype>
+        <transactiontype>
+            <name>TransactSavings</name>
+        </transactiontype>
+        <transactiontype>
+            <name>WriteCheck</name>
+        </transactiontype>
+    </transactiontypes>
+</parameters>
